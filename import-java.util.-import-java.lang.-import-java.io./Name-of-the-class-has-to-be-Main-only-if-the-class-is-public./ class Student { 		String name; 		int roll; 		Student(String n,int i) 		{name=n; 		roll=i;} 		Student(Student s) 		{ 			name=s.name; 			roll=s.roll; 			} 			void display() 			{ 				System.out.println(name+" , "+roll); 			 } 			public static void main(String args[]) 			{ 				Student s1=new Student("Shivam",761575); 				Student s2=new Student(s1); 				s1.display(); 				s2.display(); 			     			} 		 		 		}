@@ -1,0 +1,34 @@
+/* This program is to test the knowledge of constructor */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Student
+{
+		String name;
+		int roll;
+		Student(String n,int i)
+		{name=n;
+		roll=i;}
+		Student(Student s)
+		{
+			name=s.name;
+			roll=s.roll;
+			}
+			void display()
+			{
+				System.out.println(name+" , "+roll);
+			 }
+			public static void main(String args[])
+			{
+				Student s1=new Student("Shivam",761575);
+				Student s2=new Student(s1);
+				s1.display();
+				s2.display();
+			    
+			}
+		
+		
+		}
