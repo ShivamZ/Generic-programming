@@ -1,0 +1,76 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class LinkedList
+{
+		Node head;
+	class Node{
+	int data;
+	Node next;
+	
+	Node(int d)
+	{
+		data=d;
+		next=null;
+		
+	}
+		}			//class Node ends
+	
+	public void deleteNode(int key)
+{
+	Node temp=head,prev=null;
+	if(temp!=null && temp.data==key)
+	{
+		head=temp.next;
+		return;
+	}
+  while(temp!=null && temp.data!=key)
+	{
+		prev=temp;
+		temp=temp.next;
+	}
+	if(temp==null)
+	return;
+	prev.next=temp.next;
+	
+}			// ending the delete func
+
+public void push(int new_data)
+{
+	Node new_node=new Node(new_data);
+	new_node.next=head;
+	head=new_node;
+}
+//DELETING A NODE FROM A LINKED LIST
+
+public void printList()
+{
+Node tnode=head;
+while(tnode!= null){
+	System.out.println(""+tnode.data+" ");
+	tnode=tnode.next;
+}
+	
+}
+
+
+public static void main (String[] args) throws java.lang.Exception
+	{
+		LinkedList lnew=new LinkedList();
+		lnew.push(5);
+		lnew.push(3);
+		lnew.push(7);
+		lnew.push(9);
+		lnew.push(1);
+		System.out.println("Before List");
+		lnew.printList();
+		lnew.deleteNode(3);
+			System.out.println("After List");
+			lnew.printList();
+		
+	}
+}			//ending LinkedList class
