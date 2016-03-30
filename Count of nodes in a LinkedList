@@ -1,0 +1,52 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Node              //starting a class Node for data and next node
+	{
+		int data;
+		Node next;
+		   Node(int d)
+	{
+		data=d;
+		next=null;
+	}
+	}					//ending class Node
+	
+class LinkedList
+{
+	Node head;
+	
+		
+		public void push(int new_data)          //function for putting value in a node
+		{
+			Node new_node=new Node(new_data);
+			new_node.next=head;
+			head=new_node;
+		}
+		public int getCount()       //getting the total count of the nodes in a list
+		{
+			Node temp=head;
+			int count=0;
+			while(temp!=null)
+			{
+				temp=temp.next;
+				count++;
+			}
+			return count;
+		}
+		
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	LinkedList slist=new LinkedList();
+	slist.push(1);
+	slist.push(5);
+	slist.push(7);
+	slist.push(4);
+	System.out.println("The count of nodes in this linked list is"+slist.getCount());
+	}
+}					//ending Linked class
