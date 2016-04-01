@@ -1,0 +1,39 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void switchCaseString(String str)
+	{
+	switch(str)
+	{
+		case "red":
+		System.out.println("Red color");
+		break;
+		
+		case "green":
+		System.out.println("Green color");
+		break;
+			
+		default:
+		System.out.println("default");
+		
+		
+	}
+		
+	}
+	
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	switchCaseString("red");
+	switchCaseString("green");
+	switchCaseString("GREEN");
+	switchCaseString("yellow");
+	
+	}
+}
